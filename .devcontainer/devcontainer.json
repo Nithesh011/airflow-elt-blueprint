@@ -9,7 +9,7 @@
       "moby": false
     }
   },
-  "postCreateCommand": "curl -sSL https://install.astronomer.io | bash -s -- -v 1.23.0 && pip install 'astro-sdk-python>=1.6.0' && astro dev init",
+  "postCreateCommand": "curl -sSL https://install.astronomer.io | bash -s -- v1.23.0 && pip install 'astro-sdk-python>=1.6.0' && astro dev init",
   "customizations": {
     "vscode": {
       "extensions": [
