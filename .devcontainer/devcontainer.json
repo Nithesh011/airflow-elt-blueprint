@@ -1,10 +1,21 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "name": "Airflow ELT Blueprint",
+  "image": "python:3.9-slim",
   "features": {
-      "ghcr.io/astronomer/devcontainer-features/astro-cli:1": {
-        "version": "v1.9.0"
-      }
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "postCreateCommand": "bash -i -c 'astro dev start -n --wait 5m'",
-  "forwardPorts": [9090, 8080, 8501, 8502]
+  "postCreateCommand": "pip install 'astro-sdk-python>=1.6.0' && astro dev init",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "8080": { "label": "Airflow UI", "onAutoForward": "openBrowser" },
+    "8501": { "label": "Streamlit", "onAutoForward": "openBrowser" }
+  },
+  "remoteUser": "root"
 }
