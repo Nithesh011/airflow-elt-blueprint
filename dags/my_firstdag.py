@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from airflow import DAG
-from airflow.operators.dummy import DummyOperator
+from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 
@@ -27,7 +27,7 @@ with DAG(
     tags=["example", "bakery"],
 ) as dag:
 
-    start = DummyOperator(task_id="bakery_open")
+    start = EmptyOperator(task_id="bakery_open")
 
     make_bread_task = PythonOperator(
         task_id="make_bread",
