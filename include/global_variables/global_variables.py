@@ -13,8 +13,8 @@ import json
 # Enter your own info! #
 # -------------------- #
 
-MY_NAME = "Friend"
-MY_CITY = "Portland"
+MY_NAME = "nithesh"
+MY_CITY = "kollam"
 
 # ----------------------- #
 # Configuration variables #
